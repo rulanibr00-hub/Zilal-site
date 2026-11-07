@@ -1,0 +1,5 @@
+import { photos, type PhotoKey } from '@/lib/content';
+// Do not publish unverified external assets. Replace with local licensed photos once verified.
+export default function Photo({ name }: { name: PhotoKey; priority?: boolean }) {
+ return <div className={`scene-photo placeholder-${name}`} role="img" aria-label={`${photos[name].label}: место для фотографии`}><svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" aria-hidden="true"><defs><linearGradient id={`sky-${name}`} x2="0" y2="1"><stop stopColor="#738e90"/><stop offset="1" stopColor="#c4c9b5"/></linearGradient></defs><path fill={`url(#sky-${name})`} d="M0 0h1200v800H0z"/><path fill="#b6c2b8" d="m0 470 170-190 90 80L470 70l200 300 150-170 190 260 190-130v470H0Z"/><path fill="#e0e0cf" d="m355 230 115-160 110 165-81-43-35 49-35-38-51 61Z"/><path fill="#6c8881" d="m0 570 210-190 130 150 230-170 190 140 210-150 230 170v280H0Z"/><path fill="#355d54" d="m0 700 200-90 250 65 300-120 220 80 230-40v205H0Z"/><path fill="#173d35" opacity=".55" d="m0 760 300-60 260 50 300-90 340 60v80H0Z"/></svg></div>;
+}
